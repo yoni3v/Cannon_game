@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 137cbc4a66d73004faa1dea6b1e9b5bd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Prefabs/UI/GameOverUI.prefab
+  uploadId: 733555

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a52741e1fb130bc499b1e887c3925a3e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Art/Animations/player-canon-idle-1.anim
+  uploadId: 733555

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cd166bc7d60f918438edff9dc3e1aefc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Prefabs/UI/FadeUI.prefab
+  uploadId: 733555

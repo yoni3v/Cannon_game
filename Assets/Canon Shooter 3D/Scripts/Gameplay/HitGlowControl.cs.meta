@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: af17c63d6dd7c3441b914eb41d5b863e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Scripts/Gameplay/HitGlowControl.cs
+  uploadId: 733555

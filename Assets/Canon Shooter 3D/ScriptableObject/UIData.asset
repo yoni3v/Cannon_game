@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4f958c123e9574d9d5f73b1cbf8dde, type: 3}
+  m_Name: UIData
+  m_EditorClassIdentifier: 
+  m_UIPrefabs:
+  - {fileID: 8466321383686574866, guid: 7a50eeac7357e02498694c1287504f46, type: 3}
+  - {fileID: 7356951990984471428, guid: 1de927c34efa3424baf98b16c60c1903, type: 3}
+  - {fileID: 7356951990984471428, guid: 137cbc4a66d73004faa1dea6b1e9b5bd, type: 3}
+  m_UIElementsPrefabs: []
+  m_AnimInCurve_1:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_AnimInCurve_2:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

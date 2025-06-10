@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fd6fae5c9587e4296de31913c6c3e6, type: 3}
+  m_Name: Banana
+  m_EditorClassIdentifier: 
+  Projectile_ID: 2
+  ProjectileName: Banana
+  Projectile_Object: {fileID: 67236032487385546, guid: 7f01d2581bfb911409920f2a2f905a54, type: 3}
+  logo: {fileID: 21300000, guid: ad1833fe2b757a64083eabc1c1732b0c, type: 3}
+  speed: 12
+  rotation_offset: {x: 0, y: 0, z: -90}

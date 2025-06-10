@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fd6fae5c9587e4296de31913c6c3e6, type: 3}
+  m_Name: Brocoli
+  m_EditorClassIdentifier: 
+  Projectile_ID: 7
+  ProjectileName: Brocoli
+  Projectile_Object: {fileID: 2781390744336055649, guid: 91180ea7ff827ac449e4153a7ebb833c, type: 3}
+  logo: {fileID: 21300000, guid: 939c85e6903e13543864984ea79d4fba, type: 3}
+  speed: 12
+  rotation_offset: {x: 0, y: 0, z: 0}

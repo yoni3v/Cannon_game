@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 48b7f2409cb92e74bb4286214f2410c8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Art/Animations/enemy-c-idle-1.anim
+  uploadId: 733555

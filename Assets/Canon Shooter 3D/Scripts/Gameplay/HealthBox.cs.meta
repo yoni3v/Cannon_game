@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b53247b6f605d434c815e69ef0e78c45
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Scripts/Gameplay/HealthBox.cs
+  uploadId: 733555

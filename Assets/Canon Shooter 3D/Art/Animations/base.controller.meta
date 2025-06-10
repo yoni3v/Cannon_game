@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 36b211bcc0cea0645bfd1e51e6ae1c5d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Art/Animations/base.controller
+  uploadId: 733555

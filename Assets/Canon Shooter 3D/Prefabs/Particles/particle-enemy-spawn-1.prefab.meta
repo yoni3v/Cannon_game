@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7ffda5616f045aa459307ff26f4cbc70
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Prefabs/Particles/particle-enemy-spawn-1.prefab
+  uploadId: 733555

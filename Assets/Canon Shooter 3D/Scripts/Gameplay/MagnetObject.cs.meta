@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 28607027f8fde194ea2d7fe71f4dc3c7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Scripts/Gameplay/MagnetObject.cs
+  uploadId: 733555

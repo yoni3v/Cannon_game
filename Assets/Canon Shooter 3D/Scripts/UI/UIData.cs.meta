@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: fd4f958c123e9574d9d5f73b1cbf8dde
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Scripts/UI/UIData.cs
+  uploadId: 733555

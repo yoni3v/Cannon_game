@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bce4d6ef92ce650418ca3413c9ce9e1b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Prefabs/Gameplay/box-health-1.prefab
+  uploadId: 733555

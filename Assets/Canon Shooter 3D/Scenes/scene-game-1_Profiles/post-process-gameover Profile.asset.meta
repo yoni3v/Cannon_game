@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8afc392a1252032429b49214a42c0934
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Scenes/scene-game-1_Profiles/post-process-gameover
+    Profile.asset
+  uploadId: 733555

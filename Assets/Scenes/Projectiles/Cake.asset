@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fd6fae5c9587e4296de31913c6c3e6, type: 3}
+  m_Name: Cake
+  m_EditorClassIdentifier: 
+  Projectile_ID: 10
+  ProjectileName: Cake
+  Projectile_Object: {fileID: 7416531627629525490, guid: c4c82198fc4ba4d46a5f4909ab20c838, type: 3}
+  logo: {fileID: 21300000, guid: 38b405170ed51744f820ae0feee07bd5, type: 3}
+  speed: 12
+  rotation_offset: {x: 0, y: 0, z: 0}

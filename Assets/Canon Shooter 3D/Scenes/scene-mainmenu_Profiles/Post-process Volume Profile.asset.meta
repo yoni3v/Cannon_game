@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fd3937b7fba97d4469bcde7eb5a1a02a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Scenes/scene-mainmenu_Profiles/Post-process
+    Volume Profile.asset
+  uploadId: 733555

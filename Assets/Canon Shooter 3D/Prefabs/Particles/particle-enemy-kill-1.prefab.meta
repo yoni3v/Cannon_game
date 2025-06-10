@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a409bd28f888e1a40862dd29bdfbc98e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304114
+  packageName: Canon Shooter 3D - Game Template
+  packageVersion: 1.1
+  assetPath: Assets/Canon Shooter 3D/Prefabs/Particles/particle-enemy-kill-1.prefab
+  uploadId: 733555
