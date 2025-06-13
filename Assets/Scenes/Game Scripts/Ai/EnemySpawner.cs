@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
     public float SpawnRate = 5f;
+    public float EnemySpeedMultiplier = 1;
     public GameObject[] EnemyObjects;
     public Transform[] SpawnPositions;
 
@@ -26,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     {
         int EnemyIndex = Random.Range(0, EnemyObjects.Length);
         int SpawnIndex = Random.Range(0, SpawnPositions.Length);
-        Instantiate(EnemyObjects[EnemyIndex], SpawnPositions[SpawnIndex].position, SpawnPositions[SpawnIndex].rotation);
+        NavMeshAgent agent = Instantiate(EnemyObjects[EnemyIndex], SpawnPositions[SpawnIndex].position, SpawnPositions[SpawnIndex].rotation).GetComponent<NavMeshAgent>();
+        agent.speed *= EnemySpeedMultiplier;
     }
 }

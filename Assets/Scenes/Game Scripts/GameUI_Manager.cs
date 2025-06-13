@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUI_Manager : MonoBehaviour
 {
@@ -14,9 +15,52 @@ public class GameUI_Manager : MonoBehaviour
     [SerializeField] Canvas Menu;
     [SerializeField] Canvas Game;
 
+    [Header("Sliders")]
+    [SerializeField] Slider Spawnrate;
+    [SerializeField] Slider EnemySpeed;
+    [SerializeField] Slider ProjectileSpeed;
+    [SerializeField] Slider DamageReduction;
+    [SerializeField] Slider Healrate;
+
+    [Header("Toggles")]
+    [SerializeField] Toggle AutoPlay;
+
     //private variables
     Vector3 DefualtCameraPosition, DefualtCameraRotation;
     Camera main_camera;
+    EnemySpawner spawner;
+    Player_Canon_Modded player;
+    HealthSystem playerHealthSystem;
+
+    private void Awake()
+    {
+        spawner = GetComponent<EnemySpawner>();
+        player = FindAnyObjectByType<Player_Canon_Modded>();
+        playerHealthSystem = player.GetComponent<HealthSystem>();
+
+        AddCallbacks();
+    }
+
+    private void AddCallbacks()
+    {
+        Spawnrate.onValueChanged.AddListener(value => spawner.SpawnRate = value);
+        EnemySpeed.onValueChanged.AddListener(value => spawner.EnemySpeedMultiplier = value);
+        ProjectileSpeed.onValueChanged.AddListener(value => player.ProjectileSpeedMultiplier = value);
+        DamageReduction.onValueChanged.AddListener(value => playerHealthSystem.DamageMultiplier = value);
+        Healrate.onValueChanged.AddListener(value => playerHealthSystem.HealRate = value);
+
+        AutoPlay.onValueChanged.AddListener(value => player.GetComponent<PlayerAutoPlayer>().AutoPlay = value);
+    }
+
+    private void OnDestroy()
+    {
+        Spawnrate.onValueChanged.RemoveAllListeners();
+        EnemySpeed.onValueChanged.RemoveAllListeners();
+        ProjectileSpeed.onValueChanged.RemoveAllListeners();
+        DamageReduction.onValueChanged.RemoveAllListeners();
+        Healrate.onValueChanged.RemoveAllListeners();
+        AutoPlay.onValueChanged.RemoveAllListeners();
+    }
 
     private void Start()
     {
@@ -32,15 +76,29 @@ public class GameUI_Manager : MonoBehaviour
         ShowMenu();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            ShowMenu();
+        }
+    }
+
+    bool MenuOpen = false;
     private void ShowMenu()
     {
-        Time.timeScale = 0;
-        Player_Canon_Modded.TakeInput = false;
-        StartCoroutine(LerpCameraToMenu(MenuLerpDuration));
+        if (!MenuOpen)
+        {
+            Player_Canon_Modded.TakeInput = false;
+            Time.timeScale = 0;
+            StartCoroutine(LerpCameraToMenu(MenuLerpDuration));
+            MenuOpen = true;
+        }
     }
 
     public void ShowGame()
     {
+        MenuOpen = false;
         Time.timeScale = 1;
         StartCoroutine(LerpCameraToGame(GameLerpDuration));
     }
