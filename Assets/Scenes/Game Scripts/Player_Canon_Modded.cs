@@ -5,16 +5,18 @@ using UnityEngine;
 public class Player_Canon_Modded : MonoBehaviour
 {
     public static bool TakeInput = true;
+    public static bool Autoplay = false;
 
     [Header("Settings")]
     public float projectileSpeed = 1;
+    public float ProjectileSpeedMultiplier = 1f;
     public float ShootingIntensity = 1.3f;
     public float ShootingEffectDuration = 0.4f;
     public Vector3 RotationOffset = Vector3.zero;
     public ShakeData shakeData;
 
     [Header("Transform References")]
-    [SerializeField] Transform _base_cannon;
+    public Transform _base_cannon;
     [SerializeField] Transform _shoot_point;
     [SerializeField] ParticleSystem ShootingParticle;
     
@@ -68,7 +70,7 @@ public class Player_Canon_Modded : MonoBehaviour
 
     private void Update()
     {
-        if (!TakeInput)
+        if (!TakeInput || Autoplay)
         {
             return;
         }
@@ -83,13 +85,13 @@ public class Player_Canon_Modded : MonoBehaviour
         //shoot canon
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            StartCoroutine(ShootingEffectBase(ShootingEffectDuration, ShootingIntensity));
             Shoot(cursor_position);
         }
     }
 
-    private void Shoot(Vector3 shootpoint)
+    public void Shoot(Vector3 shootpoint)
     {
+        StartCoroutine(ShootingEffectBase(ShootingEffectDuration, ShootingIntensity));
         var projectile_obj = Instantiate(projectile, _shoot_point.position, Quaternion.Euler(RotationOffset));
 
         StartCoroutine(HandleProjectile(projectile_obj, shootpoint));
@@ -105,7 +107,7 @@ public class Player_Canon_Modded : MonoBehaviour
             projectile_obj.transform.LookAt(final_position);
 
             //translate it towards the destination                                           [TRANSLATION]
-            projectile_obj.transform.position += projectile_obj.transform.forward * projectileSpeed * Time.deltaTime;
+            projectile_obj.transform.position += projectile_obj.transform.forward * projectileSpeed * ProjectileSpeedMultiplier * Time.deltaTime;
 
             //Do some damage checking                                                        [DAMAGE LOGIN]
             Collider[] enemies = Physics.OverlapSphere(projectile_obj.transform.position, 1);

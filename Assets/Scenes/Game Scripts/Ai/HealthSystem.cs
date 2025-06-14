@@ -6,6 +6,8 @@ public class HealthSystem : MonoBehaviour, iDamageable, iHealable
 {
     public float MaxHealth = 200;
     public float CurrentHealth;
+    public float HealRate = 1;
+    public float DamageMultiplier = 1;
 
     public bool IsAlive = true;
 
@@ -43,7 +45,7 @@ public class HealthSystem : MonoBehaviour, iDamageable, iHealable
         }
         else
         {
-            CurrentHealth -= damage;
+            CurrentHealth -= damage * DamageMultiplier;
 
             if (CurrentHealth <= 0)
             {
