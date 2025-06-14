@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fd6fae5c9587e4296de31913c6c3e6, type: 3}
+  m_Name: pizza
+  m_EditorClassIdentifier: 
+  Projectile_ID: 17
+  ProjectileName: pizza
+  Projectile_Object: {fileID: 3125553876305254430, guid: 3fe463f6c7b37774a8d30bdf5c63aa35, type: 3}
+  logo: {fileID: 21300000, guid: 85c5cf4dd5ebf114fa82c9594395fc49, type: 3}
+  speed: 12
+  rotation_offset: {x: 0, y: 0, z: 0}

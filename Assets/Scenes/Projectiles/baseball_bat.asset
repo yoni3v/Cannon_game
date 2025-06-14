@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08fd6fae5c9587e4296de31913c6c3e6, type: 3}
-  m_Name: Projectile Asset 2
+  m_Name: baseball_bat
   m_EditorClassIdentifier: 
-  Projectile_ID: 19
-  ProjectileName: 
-  Projectile_Object: {fileID: 3812536341180693329, guid: 7612318a7ddfb0c428aeac47e2110911, type: 3}
+  Projectile_ID: 23
+  ProjectileName: Baseball_bat
+  Projectile_Object: {fileID: 2890370416589905484, guid: 33e15492a5e43c149b2fc90d49d877cd, type: 3}
   logo: {fileID: 0}
   speed: 12
   rotation_offset: {x: 0, y: 0, z: 0}

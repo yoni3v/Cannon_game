@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08fd6fae5c9587e4296de31913c6c3e6, type: 3}
-  m_Name: Projectile Asset
+  m_Name: traktor
   m_EditorClassIdentifier: 
-  Projectile_ID: 17
-  ProjectileName: pizza
-  Projectile_Object: {fileID: 3125553876305254430, guid: 3fe463f6c7b37774a8d30bdf5c63aa35, type: 3}
-  logo: {fileID: 21300000, guid: 85c5cf4dd5ebf114fa82c9594395fc49, type: 3}
+  Projectile_ID: 22
+  ProjectileName: traktor
+  Projectile_Object: {fileID: 7395697728383626869, guid: 064abda9678d1cf40b1c0f14dcf34383, type: 3}
+  logo: {fileID: 0}
   speed: 12
   rotation_offset: {x: 0, y: 0, z: 0}
