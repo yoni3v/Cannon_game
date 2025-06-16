@@ -1,0 +1,18 @@
+using UnityEngine;
+using Thirdweb;
+
+public class WalletConnector : MonoBehaviour
+{
+    async public void ConnectWallet()
+    {
+        try
+        {
+            string address = await ThirdwebManager.Instance.SDK.Wallet.Connect();
+            Debug.Log("Wallet Connected: " + address);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Wallet connection failed: " + e.Message);
+        }
+    }
+}
