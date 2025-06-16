@@ -30234,7 +30234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AutoPlay: 1
-  TargetSwitchDelay: 0.1
+  TargetSwitchDelay: 1
   EnemyDetectionRange: 20
   EnemyMask:
     serializedVersion: 2
