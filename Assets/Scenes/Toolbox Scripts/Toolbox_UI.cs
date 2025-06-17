@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Toolbox_UI : MonoBehaviour, IPointerClickHandler
 {
@@ -42,7 +43,10 @@ public class Toolbox_UI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        ToggleState();
+        if (!GameUI_Manager.AllowRandomProjectiles)
+        {
+            ToggleState();
+        }
     }
 
     private void ToggleState()
@@ -60,7 +64,7 @@ public class Toolbox_UI : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private void HandleClickByObserver(int index)
+    public void HandleClickByObserver(int index)
     {
         _local_player.ChangeProjectile(items[index].Projectile_Object, items[index].speed, items[index].rotation_offset);
 

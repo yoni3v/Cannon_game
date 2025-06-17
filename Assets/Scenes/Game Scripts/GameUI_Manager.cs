@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameUI_Manager : MonoBehaviour
 {
+    //Static vars
+    public static bool AllowRandomProjectiles;
+
     [Header("Settings")]
     public float MenuLerpDuration = 5f;
     public float GameLerpDuration = 5f;
@@ -19,24 +22,21 @@ public class GameUI_Manager : MonoBehaviour
     [SerializeField] Slider Spawnrate;
     [SerializeField] Slider EnemySpeed;
     [SerializeField] Slider ProjectileSpeed;
-    [SerializeField] Slider DamageReduction;
-    [SerializeField] Slider Healrate;
 
     [Header("Toggles")]
     [SerializeField] Toggle AutoPlay;
+    [SerializeField] Toggle RandomProjectiles;
 
     //private variables
     Vector3 DefualtCameraPosition, DefualtCameraRotation;
     Camera main_camera;
     EnemySpawner spawner;
     Player_Canon_Modded player;
-    HealthSystem playerHealthSystem;
 
     private void Awake()
     {
         spawner = GetComponent<EnemySpawner>();
         player = FindAnyObjectByType<Player_Canon_Modded>();
-        playerHealthSystem = player.GetComponent<HealthSystem>();
 
         AddCallbacks();
     }
@@ -46,10 +46,9 @@ public class GameUI_Manager : MonoBehaviour
         Spawnrate.onValueChanged.AddListener(value => spawner.SpawnRate = value);
         EnemySpeed.onValueChanged.AddListener(value => spawner.EnemySpeedMultiplier = value);
         ProjectileSpeed.onValueChanged.AddListener(value => player.ProjectileSpeedMultiplier = value);
-        DamageReduction.onValueChanged.AddListener(value => playerHealthSystem.DamageMultiplier = value);
-        Healrate.onValueChanged.AddListener(value => playerHealthSystem.HealRate = value);
 
         AutoPlay.onValueChanged.AddListener(value => player.GetComponent<PlayerAutoPlayer>().AutoPlay = value);
+        RandomProjectiles.onValueChanged.AddListener(value => AllowRandomProjectiles = value);
     }
 
     private void OnDestroy()
@@ -57,9 +56,8 @@ public class GameUI_Manager : MonoBehaviour
         Spawnrate.onValueChanged.RemoveAllListeners();
         EnemySpeed.onValueChanged.RemoveAllListeners();
         ProjectileSpeed.onValueChanged.RemoveAllListeners();
-        DamageReduction.onValueChanged.RemoveAllListeners();
-        Healrate.onValueChanged.RemoveAllListeners();
         AutoPlay.onValueChanged.RemoveAllListeners();
+        RandomProjectiles.onValueChanged.RemoveAllListeners();
     }
 
     private void Start()

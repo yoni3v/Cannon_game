@@ -24,6 +24,7 @@ public class Player_Canon_Modded : MonoBehaviour
     [SerializeField] ParticleSystem Impact_Particle;
 
     public GameScoreManager scoreManager;
+    public Toolbox_UI toolbox;
 
     #region Modules
 
@@ -92,6 +93,16 @@ public class Player_Canon_Modded : MonoBehaviour
     public void Shoot(Vector3 shootpoint)
     {
         StartCoroutine(ShootingEffectBase(ShootingEffectDuration, ShootingIntensity));
+
+        if (GameUI_Manager.AllowRandomProjectiles)
+        {
+            int TotalNumberOfItems = toolbox.items.Count;
+            int RandomItem = Random.Range(0, TotalNumberOfItems);
+            item item = toolbox.items[RandomItem];
+
+            ChangeProjectile(item.Projectile_Object, item.speed, item.rotation_offset);
+        }
+
         var projectile_obj = Instantiate(projectile, _shoot_point.position, Quaternion.Euler(RotationOffset));
 
         StartCoroutine(HandleProjectile(projectile_obj, shootpoint));
