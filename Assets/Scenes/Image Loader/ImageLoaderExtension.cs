@@ -2,49 +2,80 @@ using UnityEngine;
 using SFB;
 using System.Collections;
 using System.IO;
-using TMPro;
 using UnityEngine.UI;
-using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class ImageLoaderExtension : MonoBehaviour
 {
-    public Texture2D Image;
-    public TextMeshProUGUI ImagePath;
-    public RawImage ImagePreview;
+    //All the textures
+    public List<Texture2D> Images = new List<Texture2D>();
 
-    public static UnityEvent<Texture2D> OnImageLoaded;
+    [Header("Components")]
+    [SerializeField] GameObject ImagePrefab;
+    [SerializeField] Transform ImagesHolder;
+    [SerializeField] Button AddImages;
 
     public void LoadImageFromFile()
     {
-        ExtensionFilter[] filters = new[] { new ExtensionFilter("Image", "png", "jpg") };
-        string[] paths = StandaloneFileBrowser.OpenFilePanel("Choose Image Files", "", filters, false);
+        ExtensionFilter[] filters = new[] { new ExtensionFilter("Images", "png", "jpg") };
+        string[] paths = StandaloneFileBrowser.OpenFilePanel("Choose Images Files", "", filters, true);
 
         if (paths.Length > 0)
         {
-            StartCoroutine(StoreImage(paths[0]));
+            StartCoroutine(StoreImage(paths));
         }
     }
 
-    IEnumerator StoreImage(string path)
+    IEnumerator StoreImage(string[] paths)
     {
-        byte[] data = File.ReadAllBytes(path);
-        Texture2D image = new Texture2D(1,1);
-        image.LoadImage(data);
+        foreach (string path in paths)
+        {
+            if (Images.Count >= 24)
+            {
+                AddImages.interactable = false;
+                yield break;
+            }
 
-        yield return null;
+            byte[] data = File.ReadAllBytes(path);
+            Texture2D image = new Texture2D(1, 1);
+            image.LoadImage(data);
+            yield return null;
 
-        Image = image;
-        ImagePath.text = path;
-        ImagePreview.texture = image;
+            if (!Images.Contains(image))
+            {
+                Images.Add(image);
+            }
+        }
 
-        //trigger the event
-        OnImageLoaded?.Invoke(image);
+        UpdatePreviews();
     }
 
-    public void ClearImage()
+    private void UpdatePreviews()
     {
-        Image = null;
-        ImagePath.text = "";
-        ImagePreview.texture = null;
+        for(int i = 0; i < ImagesHolder.transform.childCount; i++)
+        {
+            Destroy(ImagesHolder.transform.GetChild(i).gameObject);
+        }
+
+        //Once all the images are added to the list update the preview
+        foreach (Texture2D image in Images)
+        {
+            GameObject ImageObject = Instantiate(ImagePrefab, ImagesHolder);
+
+            //update the preview
+            ImageObject.GetComponent<RawImage>().texture = image;
+
+            //button event
+            Button RemoveButton = ImageObject.transform.GetChild(0).GetComponent<Button>();
+            RemoveButton.onClick.AddListener(() => RemoveImage(ImageObject, image));
+        }
+    }
+
+    public void RemoveImage(GameObject image_object, Texture2D image)
+    {
+        Destroy(image_object);
+        Images.Remove(image);
+
+        AddImages.interactable = true;
     }
 }

@@ -13,12 +13,15 @@ public class EnemyFaceChanger : MonoBehaviour
     {
         ImageLoaderExtension Loader = FindAnyObjectByType<ImageLoaderExtension>();
 
-        if (Loader.Image != null)
+        if (Loader.Images.Count > 0)
         {
             m_MeshRenderer.gameObject.SetActive(true);
 
+            //Calculate a random index for random image
+            int RandomIndex = Random.Range(0, Loader.Images.Count);
+
             //Then we have the face to apply
-            m_MeshRenderer.material.mainTexture = Loader.Image;
+            m_MeshRenderer.material.mainTexture = Loader.Images[RandomIndex];
         }
         else
         {

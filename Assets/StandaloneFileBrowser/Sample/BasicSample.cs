@@ -38,7 +38,7 @@ public class BasicSample : MonoBehaviour {
         GUILayout.Space(5);
         if (GUILayout.Button("Open File Filter")) {
             var extensions = new [] {
-                new ExtensionFilter("Image Files", "png", "jpg", "jpeg" ),
+                new ExtensionFilter("Images Files", "png", "jpg", "jpeg" ),
                 new ExtensionFilter("Sound Files", "mp3", "wav" ),
                 new ExtensionFilter("All Files", "*" ),
             };
