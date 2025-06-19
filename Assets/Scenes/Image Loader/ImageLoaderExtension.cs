@@ -13,7 +13,18 @@ public class ImageLoaderExtension : MonoBehaviour
     [Header("Components")]
     [SerializeField] GameObject ImagePrefab;
     [SerializeField] Transform ImagesHolder;
-    [SerializeField] Button AddImages;
+
+    [SerializeField] ImageWrapper ImagesDictionary = new ImageWrapper{ ImagesDict = new List<CustomDict>() };
+
+    private void Awake()
+    {
+        if(File.Exists(Application.dataPath + "/" + "Images.AHEKFILE"))
+        {
+            string RawData = File.ReadAllText(Application.dataPath + "/" + "Images.AHEKFILE");
+            ImagesDictionary = JsonUtility.FromJson<ImageWrapper>(RawData);
+            StartCoroutine(LoadImage());
+        }
+    }
 
     public void LoadImageFromFile()
     {
@@ -30,13 +41,27 @@ public class ImageLoaderExtension : MonoBehaviour
     {
         foreach (string path in paths)
         {
-            if (Images.Count >= 24)
-            {
-                AddImages.interactable = false;
-                yield break;
-            }
-
             byte[] data = File.ReadAllBytes(path);
+            Texture2D image = new Texture2D(1, 1);
+            image.LoadImage(data);
+            yield return null;
+
+            if (!Images.Contains(image))
+            {
+                Images.Add(image);
+                ImagesDictionary.ImagesDict.Add(new CustomDict { Key = Images.IndexOf(image), Value = path});
+            }
+        }
+
+        SavePath();
+        UpdatePreviews();
+    }
+
+    IEnumerator LoadImage()
+    {
+        foreach (var item in ImagesDictionary.ImagesDict)
+        {
+            byte[] data = File.ReadAllBytes(item.Value);
             Texture2D image = new Texture2D(1, 1);
             image.LoadImage(data);
             yield return null;
@@ -48,6 +73,12 @@ public class ImageLoaderExtension : MonoBehaviour
         }
 
         UpdatePreviews();
+    }
+
+    private void SavePath()
+    {
+        string jsonData = JsonUtility.ToJson(ImagesDictionary);
+        File.WriteAllText(Application.dataPath + "/" + "Images.AHEKFILE", jsonData);
     }
 
     private void UpdatePreviews()
@@ -73,9 +104,35 @@ public class ImageLoaderExtension : MonoBehaviour
 
     public void RemoveImage(GameObject image_object, Texture2D image)
     {
+        ImagesDictionary.RemoveKey(Images.IndexOf(image));
         Destroy(image_object);
         Images.Remove(image);
 
-        AddImages.interactable = true;
+        SavePath();
     }
+}
+
+[System.Serializable]
+public struct ImageWrapper 
+{
+    public List<CustomDict> ImagesDict;
+
+    public void RemoveKey(int key)
+    {
+        foreach (var item in ImagesDict)
+        {
+            if (item.Key == key)
+            {
+                ImagesDict.Remove(item);
+                break;
+            }
+        }
+    }
+}
+
+[System.Serializable]
+public struct CustomDict
+{
+    public int Key;
+    public string Value;
 }
