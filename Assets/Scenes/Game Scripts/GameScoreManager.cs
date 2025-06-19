@@ -25,7 +25,7 @@ public class GameScoreManager : MonoBehaviour
             Counter.gameObject.SetActive(true);
         }
 
-        Counter.text = "x" + Score.ToString();
+        Counter.text = Score.ToString();
         CounterAnimator.Play("Impact");
         Invoke(nameof(DeActivateCounter), 0.5f);
     }

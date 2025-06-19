@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hitler
+  m_Controller: {fileID: 9100000, guid: e4cc84c83db049647a6e6f5e13ddaccc, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5db23e209ee637a41bc3eaadd70f5e07, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7929f1fd511026e46b11f30573b0ae79, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d04092c069c113b40842d5471a2b39ff, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4c81816c61522bd4b807fc3ac19968f9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 17b37622129ca75449ea81ca271f6f67, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9519777cda1daa740bf708fdf2db933a, type: 2}
