@@ -71,7 +71,7 @@ public class Player_Canon_Modded : MonoBehaviour
 
     private void Update()
     {
-        if (!TakeInput || Autoplay)
+        if (!TakeInput || Autoplay || Time.timeScale == 0)
         {
             return;
         }
