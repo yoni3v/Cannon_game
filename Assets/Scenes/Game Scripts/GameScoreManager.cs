@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameScoreManager : MonoBehaviour
 {
+    iHealable playerHealth_system;
+
     [Header("References")]
     [SerializeField] TextMeshProUGUI Counter;
     Animator CounterAnimator;
@@ -38,6 +40,9 @@ public class GameScoreManager : MonoBehaviour
         Counter.text = Score.ToString();
         CounterAnimator.Play("Impact");
         Invoke(nameof(DeActivateCounter), 0.5f);
+
+        playerHealth_system = GameObject.FindWithTag("Player").GetComponent<iHealable>();
+        playerHealth_system.OnHeal(10);
     }
 
     private void DeActivateCounter()

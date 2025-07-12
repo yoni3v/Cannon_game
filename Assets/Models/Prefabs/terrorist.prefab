@@ -2991,6 +2991,7 @@ GameObject:
   - component: {fileID: 4490417070627897470}
   - component: {fileID: 4285497404983133043}
   - component: {fileID: 1896764405101046185}
+  - component: {fileID: 1715584005486748215}
   m_Layer: 6
   m_Name: terrorist
   m_TagString: Untagged
@@ -3129,6 +3130,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MeshRenderer: {fileID: 6575654765452068867}
+--- !u!114 &1715584005486748215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7954167560692039843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe4d38a5485d344fb4bc880930641b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dead_orb: {fileID: 7716889236259433248, guid: 6fd36436ee6a91d4d85619663892f247, type: 3}
 --- !u!1 &8036094939469115617
 GameObject:
   m_ObjectHideFlags: 0

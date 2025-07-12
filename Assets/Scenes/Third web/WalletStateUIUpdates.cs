@@ -35,6 +35,11 @@ public class WalletStateUIUpdates : MonoBehaviour
             WalletConnector.Instance.OnWalletConnected += () => UpdateUI();
             EventAdded = true;
         }
+
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            Method.options.RemoveAt(0);
+        }
     }
 
     public async Task UpdateUI()
@@ -43,7 +48,7 @@ public class WalletStateUIUpdates : MonoBehaviour
         {
             CloseButton.interactable = true;
 
-            //The wallet is connect
+            //The wallet is connected
             wallet_address.gameObject.SetActive(true);
             change_wallet.interactable = true;
 
@@ -61,13 +66,20 @@ public class WalletStateUIUpdates : MonoBehaviour
     {
         int value = Method.value;       // value = 0 {email} and value = 2 {wallet}
 
-        if (value == 0)
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
-            ShowEmailRequest();
+            WalletConnector.Instance.OnWalletConnectEvent();
         }
         else
         {
-            WalletConnector.Instance.OnWalletConnectEvent();
+            if (value == 0)
+            {
+                ShowEmailRequest();
+            }
+            else
+            {
+                WalletConnector.Instance.OnWalletConnectEvent();
+            }
         }
     }
 

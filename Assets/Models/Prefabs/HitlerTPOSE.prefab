@@ -2869,6 +2869,7 @@ GameObject:
   - component: {fileID: 7374024084168244653}
   - component: {fileID: 770809654415130382}
   - component: {fileID: 3501980420152025992}
+  - component: {fileID: -6677570549783052944}
   m_Layer: 6
   m_Name: HitlerTPOSE
   m_TagString: Untagged
@@ -3014,6 +3015,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MeshRenderer: {fileID: 3760029560733568078}
+--- !u!114 &-6677570549783052944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6822719466538026285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe4d38a5485d344fb4bc880930641b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dead_orb: {fileID: 7716889236259433248, guid: 6fd36436ee6a91d4d85619663892f247, type: 3}
 --- !u!1 &7103314796024466135
 GameObject:
   m_ObjectHideFlags: 0

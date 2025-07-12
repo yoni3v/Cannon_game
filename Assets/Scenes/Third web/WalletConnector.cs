@@ -20,6 +20,7 @@ public class WalletConnector : MonoBehaviour
     [SerializeField] private GameObject connectWalletPanel;
     [SerializeField] private Button connectWalletButton, connectviaEmailButton;
     [SerializeField] private TMP_InputField email;
+    [SerializeField] private TextMeshProUGUI disclaimer_text;
 
     [Header("Wallet Settings")]
     [SerializeField] private ulong chainId = 56; // BSC Mainnet
@@ -43,8 +44,18 @@ public class WalletConnector : MonoBehaviour
 
     private void Start()
     {
-        connectWalletButton.interactable = true;
-        connectviaEmailButton.interactable = true;
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            disclaimer_text.gameObject.SetActive(true);
+            connectWalletButton.interactable = true;
+            connectviaEmailButton.interactable = false;
+        }
+        else
+        {
+            disclaimer_text.gameObject.SetActive(false);
+            connectWalletButton.interactable = true;
+            connectviaEmailButton.interactable = true;
+        }
 
         if (connectWalletButton != null)
         {
