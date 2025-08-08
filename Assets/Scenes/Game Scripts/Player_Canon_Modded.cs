@@ -16,6 +16,8 @@ public class Player_Canon_Modded : MonoBehaviour
     public ShakeData shakeData;
 
     [Header("Transform References")]
+    public CannonOBJ[] Cannon_Objects;
+
     public Transform _base_cannon;
     [SerializeField] Transform _shoot_point;
     [SerializeField] ParticleSystem ShootingParticle;
@@ -40,11 +42,22 @@ public class Player_Canon_Modded : MonoBehaviour
         Impact_Particle = new_particle;
     }
 
-    public void ChangeCannonModel(GameObject new_cannon, string movement_part_name, string shootpoint_name)
+    public void ChangeCannonModel(string new_cannon)
     {
-        GameObject spawnedUnit = Instantiate(new_cannon, transform.position, Quaternion.identity);
-        Transform shootpoint = spawnedUnit.transform.Find(shootpoint_name);
-        Transform movement_part = spawnedUnit.transform.Find(movement_part_name);
+        GameObject spawnedUnit = null;
+        Transform shootpoint = null;
+        Transform movement_part = null;
+
+        foreach (var item in Cannon_Objects)
+        {
+            if (item.Obj.name == new_cannon)
+            {
+                spawnedUnit = item.Obj.gameObject;
+                shootpoint = item.Shootpoint;
+                movement_part = item.MovementPoint;
+                break;
+            }
+        }
 
         if (shootpoint != null)
         {
@@ -63,6 +76,13 @@ public class Player_Canon_Modded : MonoBehaviour
         {
             Debug.LogError("The movement_part is not found in the spawned unit");
         }
+
+        foreach (CannonOBJ item in Cannon_Objects)
+        {
+            item.Obj.gameObject.SetActive(false);
+        }
+
+        spawnedUnit.SetActive(true);
     }
 
     #endregion
@@ -194,4 +214,12 @@ public class Player_Canon_Modded : MonoBehaviour
     }
 
     #endregion
+}
+
+[System.Serializable]
+public class CannonOBJ
+{
+    public Transform Obj;
+    public Transform Shootpoint;
+    public Transform MovementPoint;
 }

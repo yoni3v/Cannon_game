@@ -58,7 +58,7 @@ public class WalletStateUIUpdates : MonoBehaviour
         {
             //There is no wallet connection
             wallet_address.gameObject.SetActive(false);
-            change_wallet.interactable = false;
+            change_wallet.interactable = true;
         }
     }
 

@@ -18,7 +18,7 @@ public class WalletConnector : MonoBehaviour
 
 
     [SerializeField] private GameObject connectWalletPanel;
-    [SerializeField] private Button connectWalletButton, connectviaEmailButton;
+    [SerializeField] private Button connectWalletButton, connectviaEmailButton, play_as_guest;
     [SerializeField] private TMP_InputField email;
     [SerializeField] private TextMeshProUGUI disclaimer_text;
 
@@ -55,6 +55,15 @@ public class WalletConnector : MonoBehaviour
             disclaimer_text.gameObject.SetActive(false);
             connectWalletButton.interactable = true;
             connectviaEmailButton.interactable = true;
+        }
+
+        if (play_as_guest != null)
+        {
+            play_as_guest.onClick.AddListener(PlayAsGuest);
+        }
+        else
+        {
+            Debug.LogError("Play as Guest Button is not assigned!");
         }
 
         if (connectWalletButton != null)
@@ -204,6 +213,13 @@ public class WalletConnector : MonoBehaviour
         }
     }
 
+    private void PlayAsGuest()
+    {
+        connectWalletPanel.SetActive(false);
+        _connectedWallet = null;
+        Debug.Log("Playing as guest");
+    }
+
     public async void OnWalletConnectEvent()
     {
         //proper events
@@ -216,8 +232,15 @@ public class WalletConnector : MonoBehaviour
             // Create wallet options
             var walletOptions = GetWalletConnectOptions();
 
-            // Connect the wallet
-            _connectedWallet = await ThirdwebManager.Instance.ConnectWallet(walletOptions);
+            try
+            {
+                // Connect the wallet
+                _connectedWallet = await ThirdwebManager.Instance.ConnectWallet(walletOptions);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
 
             if (_connectedWallet == null)
             {
