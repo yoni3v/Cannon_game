@@ -134,6 +134,7 @@ public class WalletConnector : MonoBehaviour
 
             if (_connectedWallet == null)
             {
+                OnWalletConnectionFailed?.Invoke();
                 Debug.LogError("Failed to connect wallet - result is null");
                 return;
             }
@@ -185,6 +186,7 @@ public class WalletConnector : MonoBehaviour
 
             if (_connectedWallet == null)
             {
+                OnWalletConnectionFailed?.Invoke();
                 Debug.LogError("Failed to connect wallet - result is null");
                 return;
             }
@@ -239,11 +241,13 @@ public class WalletConnector : MonoBehaviour
             }
             catch (Exception e)
             {
+                OnWalletConnectionFailed?.Invoke();
                 Debug.Log(e);
             }
 
             if (_connectedWallet == null)
             {
+                OnWalletConnectionFailed?.Invoke();
                 Debug.LogError("Failed to connect wallet - result is null");
                 return;
             }

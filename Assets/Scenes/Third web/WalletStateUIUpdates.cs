@@ -51,6 +51,7 @@ public class WalletStateUIUpdates : MonoBehaviour
             //The wallet is connected
             wallet_address.gameObject.SetActive(true);
             change_wallet.interactable = true;
+            walletOptions.SetActive(false);
 
             wallet_address.text = await WalletConnector.Instance.GetConnectedWallet().GetAddress();
         }

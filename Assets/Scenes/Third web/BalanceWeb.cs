@@ -5,6 +5,8 @@ using TMPro;
 using Thirdweb.Unity;
 using System;
 using UnityEngine.UI;
+using System.Numerics;
+using System.Threading.Tasks;
 
 public class BalanceWeb : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class BalanceWeb : MonoBehaviour
     ThirdwebContract contract;
 
     public static BalanceWeb Instance { get; private set; }
-    public int WaleltBalance { get; private set; }
+    public BigInteger WaleltBalance { get; private set; }
     public int LocalBalance { get; private set; }
     WalletConnector walletConnector;
     IThirdwebWallet wallet;
@@ -22,7 +24,7 @@ public class BalanceWeb : MonoBehaviour
 
     // events
     public UnityEvent OnBalanceUpdating;
-    public UnityEvent<int> OnBalanceUpdated;
+    public UnityEvent<decimal> OnBalanceUpdated;
 
     private void Awake()
     {
@@ -84,11 +86,27 @@ public class BalanceWeb : MonoBehaviour
         }
     }
 
-    private async void UpdateWalletBalance()
+    public async void UpdateWalletBalance()
     {
+        if (contract == null)
+        {
+            contract = await ThirdwebManager.Instance.GetContract(ChainAddress, 56);
+        }
+
         OnBalanceUpdating?.Invoke();
-        WaleltBalance = (int) await wallet.GetBalance(56);
-        OnBalanceUpdated?.Invoke(WaleltBalance);
+        WaleltBalance = await contract.ERC20_BalanceOf(await wallet.GetAddress());
+        OnBalanceUpdated?.Invoke(await GetHumanReadableFormat());
+
+        Debug.Log("Re-fecthed balance : " + await GetHumanReadableFormat());
+    }
+
+    private async Task<decimal> GetHumanReadableFormat()
+    {
+        BigInteger raw = await contract.Read<BigInteger>("balanceOf", await wallet.GetAddress());
+        int decimals = await contract.Read<int>("decimals");
+
+        decimal displayAmount = (decimal)raw / (decimal)BigInteger.Pow(10, decimals);
+        return displayAmount;
     }
 
     private void UpdateLocalBalance()
@@ -137,6 +155,8 @@ public class BalanceWeb : MonoBehaviour
                 await contract.DropERC20_Claim(wallet, await wallet.GetAddress(), LocalBalance.ToString());
                 Debug.Log($"Amound added to user amount : {LocalBalance.ToString()}");
                 LocalBalance = 0;
+                
+                UpdateWalletBalance();
             }
             else
             {
