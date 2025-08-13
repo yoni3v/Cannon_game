@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: mega_bomber
   m_EditorClassIdentifier: 
   asset_name: mega_bomber
-  cannon_snapshot: {fileID: 0}
+  cannon_snapshot: {fileID: 21300000, guid: e92ac3e170a7cf04e9b810e5473ae24d, type: 3}
   unlocked: 1

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: base
   m_EditorClassIdentifier: 
   asset_name: base
-  cannon_snapshot: {fileID: 0}
+  cannon_snapshot: {fileID: 21300000, guid: 06bc1699c1d284f4b9098eb205e01350, type: 3}
   unlocked: 1

@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 228264deb22653947a00800f2d7e73fa, type: 3}
-  m_Name: giga_bomber
+  m_Script: {fileID: 11500000, guid: f13521c9b6e7f524c9d637ac5e1e6e6d, type: 3}
+  m_Name: Pig
   m_EditorClassIdentifier: 
-  asset_name: giga_bomber
-  cannon_snapshot: {fileID: 21300000, guid: 531a7d2de83bb804e82e5c9a32982287, type: 3}
+  Name: Pig
+  Picture: {fileID: 21300000, guid: 3e1ef44b160f6fd41a02d4b5fa67e92a, type: 3}
+  Prefab: {fileID: 3388616967083460007, guid: 8ccb7d37c4a8a3c45b7473d564d361b2, type: 3}
   unlocked: 1
