@@ -15,6 +15,6 @@ MonoBehaviour:
   Projectile_ID: 19
   ProjectileName: 
   Projectile_Object: {fileID: 3812536341180693329, guid: 7612318a7ddfb0c428aeac47e2110911, type: 3}
-  logo: {fileID: 0}
+  logo: {fileID: 21300000, guid: 4eb476f103fcbc74dbba1cde6c2d2193, type: 3}
   speed: 12
   rotation_offset: {x: 0, y: 0, z: 0}

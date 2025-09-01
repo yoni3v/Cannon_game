@@ -15,6 +15,6 @@ MonoBehaviour:
   Projectile_ID: 26
   ProjectileName: Skull
   Projectile_Object: {fileID: 195590928162634417, guid: 024437cf68d06de4dae746b554e13fb9, type: 3}
-  logo: {fileID: 0}
+  logo: {fileID: 21300000, guid: 59ae1240f8b179a42952591d1f9d4b1f, type: 3}
   speed: 12
   rotation_offset: {x: 0, y: 0, z: 0}

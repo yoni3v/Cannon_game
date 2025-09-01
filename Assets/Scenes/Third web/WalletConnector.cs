@@ -47,7 +47,7 @@ public class WalletConnector : MonoBehaviour
         if (Application.platform == RuntimePlatform.WebGLPlayer)
         {
             disclaimer_text.gameObject.SetActive(true);
-            connectWalletButton.interactable = true;
+            connectWalletButton.interactable = false;
             connectviaEmailButton.interactable = false;
         }
         else

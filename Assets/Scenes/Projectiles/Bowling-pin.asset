@@ -15,6 +15,6 @@ MonoBehaviour:
   Projectile_ID: 20
   ProjectileName: Bowling_pin
   Projectile_Object: {fileID: 4245351006023823183, guid: cd783218b244e0f46a8b1aea7045d7df, type: 3}
-  logo: {fileID: 0}
+  logo: {fileID: 21300000, guid: b3e955a4316580a46b9e8ffc3ded39a6, type: 3}
   speed: 12
   rotation_offset: {x: 0, y: 0, z: 0}
