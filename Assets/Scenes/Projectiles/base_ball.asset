@@ -15,6 +15,6 @@ MonoBehaviour:
   Projectile_ID: 24
   ProjectileName: base_ball
   Projectile_Object: {fileID: 5119274889474185496, guid: 154cfffd54becf74887a3c231ac43daa, type: 3}
-  logo: {fileID: 0}
+  logo: {fileID: 21300000, guid: 194822d88d4b2cf43b8a4630983617a8, type: 3}
   speed: 12
   rotation_offset: {x: 0, y: 0, z: 0}

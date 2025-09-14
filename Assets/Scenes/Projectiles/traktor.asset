@@ -15,6 +15,6 @@ MonoBehaviour:
   Projectile_ID: 22
   ProjectileName: traktor
   Projectile_Object: {fileID: 7395697728383626869, guid: 064abda9678d1cf40b1c0f14dcf34383, type: 3}
-  logo: {fileID: 0}
+  logo: {fileID: 21300000, guid: 168081b80be770e45ae3273e906d6948, type: 3}
   speed: 12
   rotation_offset: {x: 0, y: 0, z: 0}

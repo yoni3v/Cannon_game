@@ -15,6 +15,6 @@ MonoBehaviour:
   Projectile_ID: 25
   ProjectileName: fire work
   Projectile_Object: {fileID: 2823419899873147688, guid: 4c84b4ca45b9edc488e42f472acbae9d, type: 3}
-  logo: {fileID: 0}
+  logo: {fileID: 21300000, guid: 9a19c76a926e3c449b51cda07ce5bedc, type: 3}
   speed: 12
   rotation_offset: {x: 90, y: 0, z: 0}
