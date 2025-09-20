@@ -2068,6 +2068,7 @@ RectTransform:
   m_SizeDelta: {x: 1366, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &385098087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,6 +2101,8 @@ Transform:
   m_Father: {fileID: 1931283418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &398083954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2278,6 +2281,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8934270301952308929, guid: bc9544009cd069d459e171655369fad9, type: 3}
   m_PrefabInstance: {fileID: 398083954}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!1 &398284110
 GameObject:
