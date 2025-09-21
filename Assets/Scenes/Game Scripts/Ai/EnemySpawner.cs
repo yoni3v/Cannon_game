@@ -26,7 +26,6 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnObject()
     {
         int EnemyIndex = Random.Range(0, EnemyObjects.Count);
-        Debug.Log(EnemyIndex);
 
         int SpawnIndex = Random.Range(0, SpawnPositions.Length);
         NavMeshAgent agent = Instantiate(EnemyObjects[EnemyIndex],

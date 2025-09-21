@@ -1,5 +1,6 @@
 using FirstGearGames.SmoothCameraShaker;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_Canon_Modded : MonoBehaviour
@@ -23,7 +24,7 @@ public class Player_Canon_Modded : MonoBehaviour
     [SerializeField] ParticleSystem ShootingParticle;
     
     [SerializeField] GameObject projectile;
-    [SerializeField] ParticleSystem Impact_Particle;
+    public List<ParticleSystem> Impact_Particles;
 
     public GameScoreManager scoreManager;
     public Toolbox_UI toolbox;
@@ -35,11 +36,6 @@ public class Player_Canon_Modded : MonoBehaviour
         projectile = new_projectile;
         projectileSpeed = NewSpeed;
         RotationOffset = _RotationOffset;
-    }
-
-    public void ChangeImpactParticle(ParticleSystem new_particle)
-    {
-        Impact_Particle = new_particle;
     }
 
     public void ChangeCannonModel(string new_cannon)
@@ -152,7 +148,8 @@ public class Player_Canon_Modded : MonoBehaviour
                     scoreManager.RegisterKill();
 
                     //Play the particle                                                                   [VISUALS]
-                    var _Destroy = Instantiate(Impact_Particle, projectile_obj.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
+                    var _Destroy = Instantiate(Impact_Particles[Random.Range(0, Impact_Particles.Count)],
+                        projectile_obj.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
                     _Destroy.Play();
 
                     //Set dirty the spawned projectile                                                   [DESTROY]
@@ -176,7 +173,7 @@ public class Player_Canon_Modded : MonoBehaviour
         Destroy(projectile_obj, .2f);
 
         //Play the particle                                                                   [VISUALS]
-        var particle = Instantiate(Impact_Particle, final_position, Quaternion.identity).GetComponent<ParticleSystem>();
+        var particle = Instantiate(Impact_Particles[Random.Range(0, Impact_Particles.Count)], final_position, Quaternion.identity).GetComponent<ParticleSystem>();
         particle.Play();
 
         //destroy particle as well when its done
