@@ -16,7 +16,7 @@ public class Particles_Selector : MonoBehaviour
     [Header("Values")]
     [SerializeField] Particles[] Particle;
 
-    private void Start()
+    private void Awake()
     {
         _Player = FindAnyObjectByType<Player_Canon_Modded>();
 
