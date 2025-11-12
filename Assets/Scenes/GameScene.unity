@@ -21998,6 +21998,8 @@ GameObject:
   - component: {fileID: 1999109036}
   - component: {fileID: 1999109038}
   - component: {fileID: 1999109039}
+  - component: {fileID: 1999109041}
+  - component: {fileID: 1999109040}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -22100,6 +22102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Counter: {fileID: 1298883027}
+  _pin_sdk: {fileID: 1999109040}
 --- !u!114 &1999109036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22250,6 +22253,43 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6ae705f738ff7dd46817b26580b039a7, type: 2}
   - {fileID: 11400000, guid: fb25bb8b3ab373d4b870049466e7fb13, type: 2}
   - {fileID: 11400000, guid: bf8d2097ade1ab140aeb366a826da4ef, type: 2}
+--- !u!114 &1999109040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999109030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c63ef3514f5ee542a8d57f60b5662ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameId: nft-cannon-game
+  gameName: NFT Cannon Game
+  gameVersion: 1.0.0
+  serverURL: http://localhost:8006
+  nftServiceURL: http://localhost:8025
+  currentScore: 0
+  enemiesKilled: 0
+  currentLevel: 1
+  enableNFTMilestones: 1
+  debugMode: 1
+--- !u!114 &1999109041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999109030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3525dca19d1829c46a56da1dc51a8522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maintainTransparency: 1
+  targetCamera: {fileID: 0}
+  showDebugInfo: 1
 --- !u!114 &2039919590 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8633406158565020354, guid: 47d5805223ab085459b0c9901a8d83ca, type: 3}

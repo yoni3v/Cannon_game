@@ -10,6 +10,7 @@ public class GameScoreManager : MonoBehaviour
     Animator CounterAnimator;
 
     public static GameScoreManager Instance;
+    public PinocchioNewsIntegration _pin_sdk;
 
     int Score;
 
@@ -20,6 +21,9 @@ public class GameScoreManager : MonoBehaviour
 
     public void RegisterKill()
     {
+        _pin_sdk.AddScore(1);
+        _pin_sdk.RegisterKill();
+
         if (CounterAnimator == null)
         {
             CounterAnimator = Counter.GetComponent<Animator>();
